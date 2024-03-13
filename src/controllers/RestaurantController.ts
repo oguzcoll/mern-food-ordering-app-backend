@@ -36,7 +36,7 @@ const searchRestaurant = async (req: Request, res: Response) => {
       // searchQuery = Pasta
       const searchRegex = new RegExp(searchQuery, "i");
       query["$or"] = [
-        { restaruantName: searchRegex },
+        { restaurantName: searchRegex },
         { cuisines: { $in: [searchRegex] } },
       ];
     }
