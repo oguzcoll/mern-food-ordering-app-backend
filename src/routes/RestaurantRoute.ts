@@ -4,6 +4,16 @@ import RestaurantController from "../controllers/RestaurantController";
 const router = express.Router();
 
 router.get(
+  "/:restaurantId",
+  param("restaurantId")
+    .isString()
+    .trim()
+    .notEmpty()
+    .withMessage("RestaurantId Parameter must be a valid string"),
+  RestaurantController.getRestaurant
+);
+
+router.get(
   "/search/:city",
   param("city")
     .isString()
@@ -12,4 +22,5 @@ router.get(
     .withMessage("City Parameter must be a valid string"),
   RestaurantController.searchRestaurant
 );
+
 export default router;
