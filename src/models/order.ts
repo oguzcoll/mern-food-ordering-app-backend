@@ -1,4 +1,3 @@
-import { ObjectId } from "mongodb";
 import mongoose from "mongoose";
 const orderSchema = new mongoose.Schema({
   restaurant: { type: mongoose.Schema.Types.ObjectId, ref: "Restaurant" },
